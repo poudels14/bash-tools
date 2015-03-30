@@ -7,11 +7,10 @@ PYTHON_SCR="$BASH_TOOLS_HOME/cdd_helper.py"
 CDD_MAP="$BASH_TOOLS_HOME/cdd_completion_map.csv"
 
 
-_cdd(){
+_ssh(){
 	CDD_COMPLETION_LIST="$(python $PYTHON_SCR $CDD_MAP get_keys)"
 	local cur=${COMP_WORDS[COMP_CWORD]}
 	COMPREPLY=( $( compgen -W "$CDD_COMPLETION_LIST" -- $cur ) )
-	# COMPREPLY=($( compgen -W "" -- $cur ));
 }
 
 cdd(){
@@ -26,18 +25,16 @@ cdd(){
 		else
 			echo "${DIREC[LENGTH]},$(pwd)" >> $CDD_MAP
 			echo "Added: ${DIREC[LENGTH]}"
-			complete -o default -o dirnames -F _cdd cdd
+			complete -o default -o bashdefault -F _cdd cdd
 		fi
 	elif [[ "$1" == "remove" ]] 
 	then
 		echo "$(python $PYTHON_SCR $CDD_MAP remove $2)"
 		echo "$2 removed!"
-		# complete -o default -o bashdefault -F _cdd cdd
-		complete -o default -o dirnames -F _cdd cdd
-	elif [[ "$1" != "" ]] 
-	then
+		complete -o default -o bashdefault -F _cdd cdd
+	else
 		goto="$(python $PYTHON_SCR $CDD_MAP get_value $1)" 
 		cd $goto
 	fi
 }
-complete -o default -o dirnames -F _cdd cdd
+complete -o default -o bashdefault -F _cdd _cd cdd
