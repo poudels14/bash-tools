@@ -1,3 +1,5 @@
 #!/bin/bash
-source cdd.sh
-source git-completion.sh
+
+BASH_TOOLS_HOME="$HOME/bash-tools/"
+source "$BASH_TOOLS_HOME/cdd.sh"
+source "$BASH_TOOLS_HOME/git-completion.sh"
