@@ -52,7 +52,7 @@ alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
 alias ll='ls -FGlAhp'                       # Preferred 'ls' implementation
 alias less='less -FSRXc'                    # Preferred 'less' implementation
 #cd() { builtin cd "$@"; ll; }               # Always list directory contents upon 'cd'
-alias ..='cd ../'                           # Go back 1 directory level
+alias ..='cd ../'							          # Go back 1 directory level
 alias ...='cd ../../'                       # Go back 2 directory levels
 alias edit='subl'                           # edit:         Opens any file in sublime editor
 alias f='open -a Finder ./'                 # f:            Opens current directory in MacOS Finder
@@ -192,4 +192,17 @@ alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rul
     alias finderShowHidden='defaults write com.apple.finder ShowAllFiles TRUE'
     alias finderHideHidden='defaults write com.apple.finder ShowAllFiles FALSE'
 
+################################### Personal Aliases ############################
+export PATH=$PATH:/Volumes/OSx/Applications/MATLAB_R2014b.app/bin
+export PATH=$PATH:~/Library/Android/sdk/platform-tools
 
+alias matlab="matlab -nodesktop -nosplash"
+alias matmex="/Applications/MATLAB_R2014b.app/bin//matmex"
+
+alias proxy_on="ssh -C -D 2222 pi"
+alias ag="grep -Ri"
+
+alias python2.7usr="/usr/local/Cellar/python/2.7.12/bin/python2.7"
+
+
+alias ipython="ipython --profile=default_ipython_profile"
