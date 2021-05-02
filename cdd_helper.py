@@ -26,7 +26,7 @@ def remove(key):
 				if key != row[0]:
 					new_rows.append(row)
 				else:
-					print "Removing " + row[0]
+					print("Removing " + row[0])
 	with open(sys.argv[1], 'w') as f:
 		writer = csv.writer(f, delimiter=',')
 		for row in new_rows:
@@ -41,12 +41,12 @@ def get_keys():
 	return out
 
 if sys.argv[2] == "has_key":
-	print has_key (sys.argv[3])
+	print(has_key (sys.argv[3]))
 elif sys.argv[2] == "get_value":
-	print get_value (sys.argv[3])
+	print(get_value(sys.argv[3]))
 elif sys.argv[2] == "remove":
-	remove (sys.argv[3])
+	remove(sys.argv[3])
 elif sys.argv[2] == "get_keys":
-	print get_keys()
+	print(get_keys())
 else:
-	print "Invalid key:" + sys.argv[2]
+	print("Invalid key:" + sys.argv[2])

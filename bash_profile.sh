@@ -23,7 +23,7 @@
 
 #   Set Paths
 #   ------------------------------------------------------------
-    export PATH="$PATH:/usr/local/bin/"
+    export PATH="$PATH:/usr/local/bin"
 
 #   Set Default Editor (change 'Nano' to the editor of your choice)
 #   ------------------------------------------------------------
@@ -200,7 +200,6 @@ alias matlab="matlab -nodesktop -nosplash"
 alias matmex="/Applications/MATLAB_R2014b.app/bin//matmex"
 
 alias proxy_on="ssh -C -D 2222 pi"
-alias ag="grep -Ri"
 
 alias python2.7usr="/usr/local/Cellar/python/2.7.12/bin/python2.7"
 
